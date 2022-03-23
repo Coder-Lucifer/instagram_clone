@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         tableView.register(UINib(nibName: "FeedTableViewCell", bundle: nil), forCellReuseIdentifier: "FeedTableViewCell")
         tableView.register(UINib(nibName: "StoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "StoriesTableViewCell")
         tableView.tableFooterView = UIView()
-//        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         setupBarButtonItems()
@@ -42,7 +41,7 @@ class HomeViewController: UIViewController {
         let profileImageView = UIImageView(image: UIImage(named: "logo_nav_icon"))
         self.navigationItem.titleView = profileImageView
     }
-    
+
     
     @objc func rightBarButtonItemTapped(){
         
