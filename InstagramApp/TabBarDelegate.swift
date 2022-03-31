@@ -16,10 +16,10 @@ class TabBarDelegate: NSObject{
 
 extension TabBarDelegate: UITabBarControllerDelegate {
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        let navigationController = viewController as? UINavigationController
-        _ = navigationController?.popViewController(animated: false)
-    }
+//    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+////        let navigationController = viewController as? UINavigationController
+////        _ = navigationController?.popViewController(animated: false)
+//    }
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         let selectedViewContoller = tabBarController.selectedViewController
@@ -40,12 +40,13 @@ extension TabBarDelegate: UITabBarControllerDelegate {
             let newStoryPost = UIStoryboard(name: "NewPost", bundle: nil)
             let newPostVC = newStoryPost.instantiateViewController(withIdentifier: "NewPost") as! NewPostViewController
             let newViewNavigation = UINavigationController(rootViewController: newPostVC)
+            newViewNavigation.modalPresentationStyle = .fullScreen
             _selectedViewContoller.present(newViewNavigation, animated: true)
             return false
         }
         
-        let navigationController = viewController as? UINavigationController
-        _ = navigationController?.popViewController(animated: false)
+//        let navigationController = viewController as? UINavigationController
+//        _ = navigationController?.popViewController(animated: false)
         return true
     }
     
