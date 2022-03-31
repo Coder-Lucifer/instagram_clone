@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,13 +17,54 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fLs-7R-OvS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="KQA-Ig-Ti5" customClass="CollectionLayout" customModule="InstagramApp" customModuleProvider="target"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExploreCollectionViewCell" id="mOS-Wu-4eU" customClass="ExploreCollectionViewCell" customModule="InstagramApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="166"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DMM-py-35e">
+                                            <rect key="frame" x="0.0" y="0.0" width="177" height="166"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iG3-HJ-uo3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="166"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iG3-HJ-uo3" firstAttribute="leading" secondItem="DMM-py-35e" secondAttribute="leading" id="BmO-b6-mxQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="iG3-HJ-uo3" secondAttribute="bottom" id="Olf-BP-oQW"/>
+                                                <constraint firstAttribute="trailing" secondItem="iG3-HJ-uo3" secondAttribute="trailing" id="Qut-jL-V6a"/>
+                                                <constraint firstItem="iG3-HJ-uo3" firstAttribute="top" secondItem="DMM-py-35e" secondAttribute="top" id="bnm-OZ-tmi"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="177" height="166"/>
+                                        <connections>
+                                            <outlet property="exploreImage" destination="iG3-HJ-uo3" id="xWx-Iz-VG1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fLs-7R-OvS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2VJ-oL-lC6"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="fLs-7R-OvS" secondAttribute="bottom" id="Fdm-U8-r8l"/>
+                            <constraint firstItem="fLs-7R-OvS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YQE-nT-nqr"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fLs-7R-OvS" secondAttribute="trailing" id="cV9-Gg-H2r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="fLs-7R-OvS" id="YLM-RE-EOq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="133" y="95"/>
+            <point key="canvasLocation" x="26" y="54"/>
         </scene>
     </scenes>
     <resources>

@@ -73,14 +73,20 @@ class CollectionLayout: UICollectionViewLayout {
         let numberOfItemsPerSection:Int = 9
         
         let heightOfSection:CGFloat = 4 * normalColumnHeight + (4 * cellPadding)
-        
+//        print("Height Of Section:::: \(heightOfSection)")
         var itemInSection: Int = 0
+        
+//        print("Got xOffsets:::: \(xOffsets)")
+//        print("Got yOffsets:::: \(yOffsets)")
         
         for item in 0..<collectionView.numberOfItems(inSection: 0){
             let indexPath = IndexPath(item: item, section: 0)
             let xPos = xOffsets[itemInSection]
             let multiplier:Double = floor(Double(item)/Double(numberOfItemsPerSection))
+//            print("Multipliers:::: \(multiplier)")
+            
             let yPos = yOffsets[itemInSection] + (heightOfSection * CGFloat(multiplier))
+//            print("Got New yPos::: \(yPos)")
             var cellWidth = normalColumnWidth
             var cellHeight = normalColumnHeight
             if (itemInSection + 1) % 7 == 0 && itemInSection != 0 {
@@ -96,6 +102,7 @@ class CollectionLayout: UICollectionViewLayout {
         }
     
     }
+    
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
