@@ -10,21 +10,30 @@ import UIKit
 
 class CameraPageViewController: UIViewController {
 
+    @IBOutlet weak var simpleCameraView: SimpleCameraView!
+    
+    var simpleCamera:SimpleCamera!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        simpleCamera = SimpleCamera(cameraView: simpleCameraView)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        simpleCamera.startSession()
     }
-    */
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        simpleCamera.stopSession()
+    }
+    
+    @IBAction func cameraCaptureClicked(_ sender: Any) {
+        if simpleCamera.currentCaptureMode == .photo {
+            simpleCamera.takePhoto { data, success in
+                print("Image Clicked")
+            }
+        }
+    }
 
 }

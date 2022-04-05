@@ -47,7 +47,9 @@ class CollectionLayout: UICollectionViewLayout {
         
         for item in 0..<6 {
             let multiplier = item % 3
+//            print("MultiPlier:::: \(multiplier)")
             let xPos = CGFloat(multiplier) * (normalColumnWidth + cellPadding)
+//            print("xPos:::: \(xPos)")
             xOffsets.append(xPos)
         }
         
@@ -67,6 +69,8 @@ class CollectionLayout: UICollectionViewLayout {
             if item == 8 {
                 yPos += (Double(normalColumnHeight) + Double(cellPadding))
             }
+            print("yPOS::::: \(yPos)")
+
             yOffsets.append(CGFloat(yPos))
         }
         
@@ -86,7 +90,7 @@ class CollectionLayout: UICollectionViewLayout {
 //            print("Multipliers:::: \(multiplier)")
             
             let yPos = yOffsets[itemInSection] + (heightOfSection * CGFloat(multiplier))
-//            print("Got New yPos::: \(yPos)")
+            print("Got New yPos::: \(yPos)")
             var cellWidth = normalColumnWidth
             var cellHeight = normalColumnHeight
             if (itemInSection + 1) % 7 == 0 && itemInSection != 0 {

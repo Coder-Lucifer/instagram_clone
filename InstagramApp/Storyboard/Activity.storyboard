@@ -16,9 +16,34 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2S-8D-7n2" customClass="CustomSegmentView" customModule="InstagramApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="dlo-43-wfQ"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jjE-cz-8Tf">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jjE-cz-8Tf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="1a3-mT-RpN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jjE-cz-8Tf" secondAttribute="trailing" id="5x8-Ej-uXY"/>
+                            <constraint firstItem="c2S-8D-7n2" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Aya-if-v8c"/>
+                            <constraint firstItem="c2S-8D-7n2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="NQZ-QO-Fk4"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="c2S-8D-7n2" secondAttribute="trailing" id="R5D-X7-Gtf"/>
+                            <constraint firstItem="jjE-cz-8Tf" firstAttribute="top" secondItem="c2S-8D-7n2" secondAttribute="bottom" id="m7Y-lk-pfG"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jjE-cz-8Tf" secondAttribute="bottom" id="uzy-04-ZJX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="jjE-cz-8Tf" id="2Kq-M7-gTD"/>
+                        <outlet property="segmentContoller" destination="c2S-8D-7n2" id="AE3-vZ-YFa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
