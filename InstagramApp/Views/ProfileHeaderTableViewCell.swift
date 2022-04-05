@@ -24,6 +24,8 @@ class ProfileHeaderTableViewCell: UITableViewCell {
     
     var profileType: ProfileType = .personal
     
+    var parentViewController: UIViewController!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -59,9 +61,8 @@ class ProfileHeaderTableViewCell: UITableViewCell {
     }
     
     func logout() {
-        
         print("logout")
-        
+        LoginAuth.logoutFirebase(self: parentViewController)
     }
     
     func follow() {

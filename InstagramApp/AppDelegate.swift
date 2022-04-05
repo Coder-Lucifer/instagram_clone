@@ -7,6 +7,9 @@
 import UIKit
 import Firebase
 
+let tabBarDelegate = TabBarDelegate()
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -72,6 +72,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             let profileHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProfileHeaderTableViewCell") as! ProfileHeaderTableViewCell
             
             profileHeaderTableViewCell.profileType = profileType
+            profileHeaderTableViewCell.parentViewController = self
             
             switch profileType {
                 
